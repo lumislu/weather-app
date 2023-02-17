@@ -1,0 +1,180 @@
+$mainColorBlue: #012848;
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $mainColorBlue;
+}
+
+.container {
+  position: relative;
+  width: 400px;
+  height: 105px;
+  background-color: #fff;
+  padding: 28px 32px;
+  overflow: hidden;
+  border-radius: 18px;
+  font-family: "Roboto", sans-serif;
+  transition: 0.5s ease-out;
+}
+
+.search-box {
+  width: 100%;
+  height: min-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  & input {
+    position: relative;
+    left: 32px;
+    color: $mainColorBlue;
+    width: 70%;
+    font-size: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px;
+    &::placeholder {
+      font-size: 20px;
+      font-weight: 500;
+      color: $mainColorBlue;
+      text-transform: capitalize;
+    }
+    &:focus {
+      background: rgb(246, 246, 246);
+    }
+  }
+  & button {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    color: $mainColorBlue;
+    background: dff6ff;
+    border-radius: 50%;
+    font-size: 22px;
+    transition: 0.4s ease;
+    &:hover {
+      color: #fff;
+      background-color: $mainColorBlue;
+    }
+  }
+  & i {
+    position: absolute;
+    color: $mainColorBlue;
+    font-size: 28px;
+  }
+}
+
+.weather-box {
+  text-align: center;
+  scale: 0;
+  opacity: 0;
+  & img {
+    width: 60%;
+    margin-top: 30px;
+  }
+  & .temperature {
+    position: relative;
+    color: $mainColorBlue;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: -16px;
+    & span {
+      position: absolute;
+      margin-left: 4rem;
+      font-size: 1.5rem;
+    }
+  }
+  & .description {
+    color: $mainColorBlue;
+    font-size: 22px;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+}
+
+.weather-details {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  scale: 0;
+  opacity: 0;
+  & .humidity {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    padding-left: 20px;
+    justify-content: flex-start;
+  }
+  & .wind {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    height: 100px;
+    padding-right: 20px;
+    justify-content: flex-end;
+  }
+  & i {
+    color: $mainColorBlue;
+    font-size: 26px;
+    margin-right: 10px;
+    margin-top: 6px;
+  }
+  & span {
+    color: $mainColorBlue;
+    font-size: 22px;
+    font-weight: 500;
+  }
+  & p {
+    color: $mainColorBlue;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.not-found {
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  scale: 0;
+  display: none;
+  & img {
+    border-radius: 50%;
+    width: 80%;
+  }
+  & p {
+    margin-top: 12px;
+    text-transform: capitalize;
+    color: $mainColorBlue;
+    flex: 22px;
+    font-weight: 500;
+  }
+}
+
+.fade-in {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    scale: 0;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
